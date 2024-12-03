@@ -1,13 +1,7 @@
-re='^[0-9]+$'
-
-if [ $# -gr 0 ] && [[ $1 =~ $re ]]; then
-  DAY=$1
-else
-  DAY="1"
-fi
+DAY=$1
 
 echo "Building and running day $DAY"
 
-docker build --tag "aoc-d$DAY" --build-arg DAY=$DAY .
-docker run --rm aoc-d$DAY
+docker build --tag "aoc-d$DAY" --quiet --build-arg DAY=$DAY .
+docker run --rm --quiet aoc-d$DAY
 docker rmi aoc-d$DAY
