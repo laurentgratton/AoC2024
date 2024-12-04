@@ -1,7 +1,6 @@
 (ns day2
     (:require
-      [clojure.string :as str]
-      [aoc :as aoc]))
+      [clojure.string :as str]))
 
 (defn toVecOfInt [line]
       (map #(Integer/parseInt %) (str/split line #" ")))
